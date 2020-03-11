@@ -12,7 +12,7 @@
         select * from subscriber where id = #{id}
     </select>
 
-    <select id="findALl" parameterType="com.werdna.DirectoryOfRegions.entity.Region">
+    <select id="findAll" parameterType="com.werdna.DirectoryOfRegions.entity.Region">
         select * from directory
     </select>
 

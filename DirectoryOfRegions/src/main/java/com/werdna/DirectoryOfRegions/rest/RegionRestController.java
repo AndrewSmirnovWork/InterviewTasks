@@ -20,7 +20,7 @@ public class RegionRestController {
 
     @GetMapping("/regions")
     public List<Region> findAll() {
-        return regionService.findALl();
+        return regionService.findAll();
     }
 
     @PutMapping("/regions")
