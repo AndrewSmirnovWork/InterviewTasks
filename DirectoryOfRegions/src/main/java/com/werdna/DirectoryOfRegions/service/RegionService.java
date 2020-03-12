@@ -15,6 +15,6 @@ public interface RegionService {
     @Select("Select * from directory")
     List<Region> findAll();
 
-    @Update("Update directory set name = #{name} and shortName = #{shortName} where id=#{id}")
+    @Update("Update directory set fullName = #{fullName}, shortName = #{shortName} where id=#{id}")
     void update(Region region);
 }

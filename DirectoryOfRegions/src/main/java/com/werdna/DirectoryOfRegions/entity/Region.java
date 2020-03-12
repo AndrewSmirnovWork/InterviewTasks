@@ -6,8 +6,7 @@ public class Region {
 
     private int id;
 
-
-    private String name;
+    private String fullName;
 
     private String shortName;
 
@@ -22,12 +21,12 @@ public class Region {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getShortName() {
@@ -42,7 +41,7 @@ public class Region {
     public String toString() {
         return "Region{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", fullName='" + fullName + '\'' +
                 ", shortName='" + shortName + '\'' +
                 '}';
     }
