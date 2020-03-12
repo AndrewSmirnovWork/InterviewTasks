@@ -34,7 +34,7 @@ public class RegionRestController {
         return regionService.findById(id);
     }
 
-    @Cacheable(value = "cachedRegions", key ="#fullName")
+    @Cacheable(value = "cachedRegions", key ="#id")
     @PutMapping("/regions")
     public String update(@RequestBody Region region) {
         regionService.update(region);

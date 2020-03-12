@@ -1,7 +1,5 @@
 package com.werdna.DirectoryOfRegions.entity;
 
-
-
 public class Region {
 
     private int id;

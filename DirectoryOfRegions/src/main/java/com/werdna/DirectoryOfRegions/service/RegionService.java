@@ -11,7 +11,6 @@ import java.util.List;
 @Component
 public interface RegionService {
 
-    @Cacheable
     @Select("Select * from directory")
     List<Region> findAll();
 
