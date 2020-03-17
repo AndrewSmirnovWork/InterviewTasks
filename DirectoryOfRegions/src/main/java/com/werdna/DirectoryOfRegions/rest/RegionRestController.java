@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.logging.Logger;
 
+
 @RestController
 @RequestMapping("/api")
 public class RegionRestController {
 
     private Logger log = Logger.getLogger(getClass().getName());
 
+    @Autowired
     private RegionService regionService;
 
     @Autowired
@@ -22,19 +24,20 @@ public class RegionRestController {
         this.regionService = regionService;
     }
 
-    @Cacheable(value = "cachedRegions")
+
     @GetMapping("/regions")
     public List<Region> findAll() {
         return regionService.findAll();
     }
 
-    @Cacheable(value = "cachedRegionsById")
+
     @GetMapping("/regions/{id}")
     public Region findById(@PathVariable Integer id) {
+        log.info("getting user with id " + id);
         return regionService.findById(id);
     }
 
-    @Cacheable(value = "cachedRegions", key ="#id")
+
     @PutMapping("/regions")
     public String update(@RequestBody Region region) {
         regionService.update(region);

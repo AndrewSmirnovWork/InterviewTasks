@@ -11,6 +11,11 @@ public class Region {
     public Region() {
     }
 
+    public Region(String fullName, String shortName) {
+        this.fullName = fullName;
+        this.shortName = shortName;
+    }
+
     public int getId() {
         return id;
     }
