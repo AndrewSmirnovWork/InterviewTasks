@@ -2,6 +2,7 @@ package ru.diasoft.entity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +29,12 @@ public class Person {
     @Column(name = "position")
     private int position;
 
-/*    @OneToMany(fetch=FetchType.LAZY,
+    @OneToMany(fetch=FetchType.LAZY,
             mappedBy="person",
             cascade= {CascadeType.PERSIST, CascadeType.MERGE,
                     CascadeType.DETACH, CascadeType.REFRESH})
-    @XmlAnyElement
-    private List<Contacts> contactsList;*/
+
+    private List<Contacts> contactsList;
 
      public Person(String firstName, String lastName, String middleName) {
         this.firstName = firstName;
@@ -48,13 +49,14 @@ public class Person {
         this.id = id;
     }
 
-/*    public List<Contacts> getContactsList() {
+    @XmlElement
+    public List<Contacts> getContactsList() {
         return contactsList;
     }
 
     public void setContactsList(List<Contacts> contactsList) {
         this.contactsList = contactsList;
-    }*/
+    }
 
     public int getId() {
         return id;
@@ -96,13 +98,13 @@ public class Person {
         this.position = position;
     }
 
-/*    public void add(Contacts contacts) {
+    public void add(Contacts contacts) {
 
         if (contacts == null) {
             contactsList = new ArrayList<>();
         }
         contactsList.add(contacts);
         contacts.setPerson(this);
-    }*/
+    }
 
 }

@@ -12,7 +12,6 @@
         </listener-class>
     </listener>-->
 
-<!--
     <servlet>
         <servlet-name>PersonService</servlet-name>
         <servlet-class>
@@ -25,7 +24,6 @@
         <servlet-name>PersonService</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
--->
 
 
 </web-app>

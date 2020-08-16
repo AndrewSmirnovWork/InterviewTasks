@@ -1,11 +1,11 @@
 package ru.diasoft.entity;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity//Этой аннотацией мы указываем, что данный класс является сущностью.
 @Table(name = "contact_type")// Этой аннотацией мы указываем, что за эту сущность в БД отвечает таблица
-@XmlRootElement
+@XmlType
 public class ContactType {
 
     @Id
@@ -15,7 +15,6 @@ public class ContactType {
 
     @Column(name = "type")
     private String type;
-
 
     public int getId() {
         return id;
