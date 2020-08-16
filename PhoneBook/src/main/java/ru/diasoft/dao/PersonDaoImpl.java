@@ -2,12 +2,10 @@ package ru.diasoft.dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import ru.diasoft.entity.Person;
 import ru.diasoft.hibernate.HibernateSessionFactoryUtil;
 
 import javax.jws.WebService;
-import java.util.List;
 
 @WebService
 public class PersonDaoImpl implements PersonDao {
@@ -59,7 +57,7 @@ public class PersonDaoImpl implements PersonDao {
         closeCurrentSession();
     }
 
-    @Override
+    /*@Override
     public List<Person> findAll() {
         //открываем сессию
         openSession();
@@ -71,7 +69,7 @@ public class PersonDaoImpl implements PersonDao {
 
         // execute query and get result list
         return theQuery.getResultList();
-    }
+    }*/
 
     public void openSession() {
         currentSession = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -80,5 +78,6 @@ public class PersonDaoImpl implements PersonDao {
     public void closeCurrentSession() {
         currentSession.close();
     }
+
 
 }

@@ -5,5 +5,5 @@
     <endpoint
             name="PersonService"
             implementation="ru.diasoft.service.PersonServiceImpl"
-            url-pattern="/hello"/>
+            url-pattern="/PersonService"/>
 </endpoints>

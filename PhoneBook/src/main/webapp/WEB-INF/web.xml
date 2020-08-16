@@ -2,16 +2,15 @@
 <!DOCTYPE web-app PUBLIC
         "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
 <web-app>
-    <display-name>Archetype Created Web Application</display-name>
-<!--
+    <!--информация необходимая для контейнера сервлетов-->
     <listener>
         <listener-class>
             com.sun.xml.ws.transport.http.servlet.WSServletContextListener
         </listener-class>
-    </listener>-->
-
+    </listener>
+    <!--диспетчер сервлет com.sun.xml.ws.transport.http.servlet.WSServlet это класс,
+     который вызывается контейнером при обращении к этому сервлету через URL-->
     <servlet>
         <servlet-name>PersonService</servlet-name>
         <servlet-class>
@@ -22,8 +21,10 @@
 
     <servlet-mapping>
         <servlet-name>PersonService</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <url-pattern>/PersonService</url-pattern>
     </servlet-mapping>
-
+    <session-config>
+        <session-timeout>120</session-timeout>
+    </session-config>
 
 </web-app>
